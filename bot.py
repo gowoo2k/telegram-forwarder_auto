@@ -41,8 +41,8 @@ except Exception as ap:
 @BotzHubUser.on(events.NewMessage(incoming=True))
 async def sender_bH(event):
         try:
-            chat = await event.get_chat()
-            print(chat)
+            #chat = await event.get_chat()
+            #print(chat)
             await BotzHubUser.send_message(
                 'duhwan_bot',
                 event.message
