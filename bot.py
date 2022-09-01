@@ -44,7 +44,7 @@ async def sender_bH(event):
             chat = await event.get_chat()
             print(chat)
             await BotzHubUser.send_message(
-                '5769747072',
+                'duhwan_bot',
                 event.message
             )
         except Exception as e:
