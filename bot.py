@@ -52,6 +52,14 @@ except Exception as ap:
 @BotzHubUser.on(events.NewMessage)
 async def my_event_handler(event):
     if 'hello' in event.raw_text:
+        chat = await event.get_chat()
+        sender = await event.get_sender()
+        chat_id = event.chat_id
+        sender_id = event.sender_id
+        print(chat)
+        print(sender)
+        print(chat_id)
+        print(sender_id)
         await event.reply('hi!')
 
 print("Bot has started.")
