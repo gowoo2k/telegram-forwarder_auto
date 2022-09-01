@@ -37,12 +37,13 @@ except Exception as ap:
     print(f"ERROR - {ap}")
     exit(1)
 
-@BotzHubUser.on(events.NewMessage(incoming=True, chats=FROM))
+# @BotzHubUser.on(events.NewMessage(incoming=True, chats=FROM))
+@BotzHubUser.on(events.NewMessage(incoming=True, chats='walajosh'))
 async def sender_bH(event):
-    for i in TO:
+    #for i in TO:
         try:
             await BotzHubUser.send_message(
-                i,
+                'duhwan_bot',
                 event.message
             )
         except Exception as e:
