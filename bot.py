@@ -38,16 +38,21 @@ except Exception as ap:
     exit(1)
 
 # @BotzHubUser.on(events.NewMessage(incoming=True, chats=FROM))
-@BotzHubUser.on(events.NewMessage(incoming=True, chats='walajosh'))
-async def sender_bH(event):
+#@BotzHubUser.on(events.NewMessage(incoming=True, chats='walajosh'))
+#async def sender_bH(event):
     #for i in TO:
-        try:
-            await BotzHubUser.send_message(
-                'duhwan_bot',
-                event.message
-            )
-        except Exception as e:
-            print(e)
+ #       try:
+  #          await BotzHubUser.send_message(
+   #             'duhwan_bot',
+    #            event.message
+     #       )
+      #  except Exception as e:
+       #     print(e)
+        
+@BotzHubUser.on(events.NewMessage)
+async def my_event_handler(event):
+    if 'hello' in event.raw_text:
+        await event.reply('hi!')
 
 print("Bot has started.")
 BotzHubUser.run_until_disconnected()
