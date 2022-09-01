@@ -38,29 +38,29 @@ except Exception as ap:
     exit(1)
 
 # @BotzHubUser.on(events.NewMessage(incoming=True, chats=FROM))
-#@BotzHubUser.on(events.NewMessage(incoming=True, chats='walajosh'))
-#async def sender_bH(event):
-    #for i in TO:
- #       try:
-  #          await BotzHubUser.send_message(
-   #             'duhwan_bot',
-    #            event.message
-     #       )
-      #  except Exception as e:
-       #     print(e)
+@BotzHubUser.on(events.NewMessage(incoming=True, chats='walajosh'))
+async def sender_bH(event):
+    for i in TO:
+        try:
+            await BotzHubUser.send_message(
+                '5769747072',
+                event.message
+            )
+        except Exception as e:
+            print(e)
         
-@BotzHubUser.on(events.NewMessage)
-async def my_event_handler(event):
-    if 'hello' in event.raw_text:
-        chat = await event.get_chat()
-        sender = await event.get_sender()
-        chat_id = event.chat_id
-        sender_id = event.sender_id
-        print(chat)
-        print(sender)
-        print(chat_id)
-        print(sender_id)
-        await event.reply('hi!')
+#@BotzHubUser.on(events.NewMessage)
+#async def my_event_handler(event):
+#    if 'hello' in event.raw_text:
+#        chat = await event.get_chat()
+#        sender = await event.get_sender()
+#        chat_id = event.chat_id
+#        sender_id = event.sender_id
+#        print(chat)
+#        print(sender)
+#        print(chat_id)
+#        print(sender_id)
+#        await event.reply('hi!')
 
 print("Bot has started.")
 BotzHubUser.run_until_disconnected()
