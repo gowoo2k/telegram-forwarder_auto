@@ -38,9 +38,8 @@ except Exception as ap:
     exit(1)
 
 # @BotzHubUser.on(events.NewMessage(incoming=True, chats=FROM))
-@BotzHubUser.on(events.NewMessage(incoming=True, chats=46910251))
+@BotzHubUser.on(events.NewMessage(incoming=True))
 async def sender_bH(event):
-    #for i in TO:
         try:
             chat = await event.get_chat()
             print(chat)
