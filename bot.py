@@ -43,10 +43,11 @@ async def sender_bH(event):
         try:
             #chat = await event.get_chat()
             #print(chat)
-            await BotzHubUser.send_message(
-                'duhwan_bot',
-                event.message
-            )
+            #await BotzHubUser.send_message(
+            #    'duhwan_bot',
+            #    event.message
+            #)
+            await BotzHubUser.forward_messages('duhwan_bot', event.message)
         except Exception as e:
             print(e)
         
