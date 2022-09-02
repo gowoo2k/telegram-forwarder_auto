@@ -43,11 +43,16 @@ async def sender_bH(event):
         try:
             #chat = await event.get_chat()
             #print(chat)
+            
+            # 그냥 복사 붙여넣기 전송
             #await BotzHubUser.send_message(
             #    'duhwan_bot',
             #    event.message
             #)
+            
+            # 포워딩으로 보내기
             await BotzHubUser.forward_messages('duhwan_bot', event.message)
+            
         except Exception as e:
             print(e)
         
