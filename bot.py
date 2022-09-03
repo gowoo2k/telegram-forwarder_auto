@@ -40,9 +40,9 @@ except Exception as ap:
 #원래 코드 그룹-그룹
 #@BotzHubUser.on(events.NewMessage(incoming=True, chats=FROM))
 #모든 메시지에 응답하기
-#@BotzHubUser.on(events.NewMessage(incoming=True))
+@BotzHubUser.on(events.NewMessage(incoming=True))
 #특정 유저 메시지에만 반응
-@BotzHubUser.on(events.NewMessage(incoming=True, from_users='hoyduly' ))
+#@BotzHubUser.on(events.NewMessage(incoming=True, from_users='hoyduly' ))
 async def sender_bH(event):
         try:
             #chat = await event.get_chat()
