@@ -24,11 +24,6 @@ print("Starting...")
 APP_ID = config("APP_ID", default=None, cast=int)
 API_HASH = config("API_HASH", default=None)
 SESSION = config("SESSION")
-FROM_ = config("FROM_CHANNEL")
-TO_ = config("TO_CHANNEL")
-
-FROM = [int(i) for i in FROM_.split()]
-TO = [int(i) for i in TO_.split()]
 
 try:
     BotzHubUser = TelegramClient(StringSession(SESSION), APP_ID, API_HASH)
@@ -40,9 +35,9 @@ except Exception as ap:
 #원래 코드 그룹-그룹
 #@BotzHubUser.on(events.NewMessage(incoming=True, chats=FROM))
 #모든 메시지에 응답하기
-@BotzHubUser.on(events.NewMessage(incoming=True))
+$@BotzHubUser.on(events.NewMessage(incoming=True))
 #특정 유저 메시지에만 반응
-#@BotzHubUser.on(events.NewMessage(incoming=True, from_users='hoyduly' ))
+@BotzHubUser.on(events.NewMessage(incoming=True, from_users='hoyduly' ))
 async def sender_bH(event):
         try:
             #chat = await event.get_chat()
